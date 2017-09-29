@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+	'uses' => 'ProductController@getIndex',
+	'as' => 'product.index'
+
+]);
 
 Auth::routes();
 
