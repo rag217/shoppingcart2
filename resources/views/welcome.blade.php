@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
 @yield('styles')
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -69,6 +70,11 @@
         </style>
     </head>
     <body>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md">
+
+
         <div class="flex-center position-ref full-height">
 	
         
@@ -85,13 +91,46 @@
                 </div>
             @endif
 
-            <div class="content">
+
+            <div class="content pull-right">
                 <div class="title m-b-md">
                     Totem Jeans
                 </div>
 
+ </div>
+ </div>
+ </div>
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+
+<div class="container">
+<div class="row">
+<div class="col-md">
+@foreach($products->chunk(3) as $productChunk)
+<div class="card-group">
+ @foreach($productChunk as $product)
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="{{$product->imagePath}}" alt="Card image cap" class="img-responsive">
+  <div class="card-body">
+    <h4 class="card-title">{{$product->title}}</h4>
+    <p class="card-text">Awesome jeans that youl will want to wear all the time.</p>
+    <div class="pull-left price">${{$product->price}}</div>
+    <a href="#" class="btn btn-success pull-right">Add to Cart</a>
+  </div>
+
+</div>
+@endforeach
+
+</div>
+
+@endforeach
+ </div>
+ </div>
+   </div>
             </div>
         </div>
+
+
     </body>
 </html>
