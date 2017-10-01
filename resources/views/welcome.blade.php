@@ -81,7 +81,8 @@
 
             @if (Route::has('login'))
                 <div class="top-right links">
-			<a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart</a>
+			<a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart  <span class="badge badge-secondary">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
+		</a>
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
