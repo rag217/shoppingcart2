@@ -17,6 +17,15 @@ Route::get('/', [
 
 ]);
 
+Route::get('/add-to-cart/{id}', [
+	'uses' => 'ProductController@getAddToCart',
+	'as' => 'product.AddToCart'
+
+]);
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+

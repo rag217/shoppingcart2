@@ -116,7 +116,7 @@
     <h4 class="card-title">{{$product->title}}</h4>
     <p class="card-text">Awesome jeans that youl will want to wear all the time.</p>
     <div class="pull-left price">${{$product->price}}</div>
-    <a href="#" class="btn btn-success pull-right">Add to Cart</a>
+    <a href="{{route('product.AddToCart',['id' => $product->id])}}" class="btn btn-success pull-right">Add to Cart</a>
   </div>
 
 </div>
