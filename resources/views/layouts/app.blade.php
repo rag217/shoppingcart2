@@ -42,7 +42,7 @@
                     <ul class="nav navbar-nav">
                         &nbsp;
 			 <li class="nav-item">
-       			 <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart <span class="badge badge-secondary">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span></a>
+       			 <a class="nav-link" href="{{route('product.shoppingCart')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart <span class="badge badge-secondary">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span></a>
       			</li>
                     </ul>
 
